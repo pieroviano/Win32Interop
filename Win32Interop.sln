@@ -1,20 +1,34 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Interop.User32", "User32\Win32Interop.User32.csproj", "{1C09DA92-5492-4022-A090-961076A41185}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win32Interop.User32", "User32\Win32Interop.User32.csproj", "{1C09DA92-5492-4022-A090-961076A41185}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A558485A-58F7-4748-A0BE-EE1BB01732F5} = {A558485A-58F7-4748-A0BE-EE1BB01732F5}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Interop.Kernel32", "Kernel32\Win32Interop.Kernel32.csproj", "{C50EB086-0E96-4D7F-9C23-E7632ABC46AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win32Interop.Kernel32", "Kernel32\Win32Interop.Kernel32.csproj", "{C50EB086-0E96-4D7F-9C23-E7632ABC46AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Interop.Gdi32", "Gdi32\Win32Interop.Gdi32.csproj", "{7B9B5218-AC11-48CE-83F9-465A3C897A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win32Interop.Gdi32", "Gdi32\Win32Interop.Gdi32.csproj", "{7B9B5218-AC11-48CE-83F9-465A3C897A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Interop.Uxtheme", "Uxtheme\Win32Interop.Uxtheme.csproj", "{DFE88B86-31CA-4BDE-A1D1-77FE83F6A541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win32Interop.Uxtheme", "Uxtheme\Win32Interop.Uxtheme.csproj", "{DFE88B86-31CA-4BDE-A1D1-77FE83F6A541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Interop.Dwmapi", "Dwmapi\Win32Interop.Dwmapi.csproj", "{88D97BB0-77CC-4431-8C6D-63EF9AD461B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win32Interop.Dwmapi", "Dwmapi\Win32Interop.Dwmapi.csproj", "{88D97BB0-77CC-4431-8C6D-63EF9AD461B4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SystemHookCore", "SystemHookCore\SystemHookCore.vcxproj", "{A558485A-58F7-4748-A0BE-EE1BB01732F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReSharper Settings", "ReSharper Settings", "{CAA7C6FB-9420-4D76-AC05-19F3D7DEDC84}"
 	ProjectSection(SolutionItems) = preProject
 		Win32Interop.sln.DotSettings = Win32Interop.sln.DotSettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55426C0F-9ECB-4385-96EC-AE765C41BF23}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Build.bat = Build.bat
+		Directory.Build.props = Directory.Build.props
+		Directory.NuGet.props = Directory.NuGet.props
+		Nuget.Config = Nuget.Config
 	EndProjectSection
 EndProject
 Global
@@ -123,5 +137,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7EF2525-6B6E-44B4-A926-9C3F6FD28BFD}
 	EndGlobalSection
 EndGlobal
