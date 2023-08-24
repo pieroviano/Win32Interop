@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
+	
 	<PropertyGroup>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -21,6 +22,8 @@
 		<Authors>Luke Stratman</Authors>
 		<PackageId>Net4x.$(MSBuildProjectName)</PackageId>
 		<PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,10 +35,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
+		<None Include="..\README.md" Pack="True" PackagePath="\"/>
 	</ItemGroup>
+
 	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
 </Project>

@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
-  <PropertyGroup>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-  </PropertyGroup>
-<PropertyGroup><Version>$(VersionPrefix).$(VersionSuffix)</Version></PropertyGroup>
+	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
+	
 	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>$(VersionPrefix).$(VersionSuffix)</Version>
 		<RootNamespace>Win32Interop</RootNamespace>
 		<TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
 		<AssemblyTitle>Win32Interop.Uxtheme</AssemblyTitle>
@@ -21,6 +20,8 @@
 		<Authors>Luke Stratman</Authors>
 		<PackageId>Net4x.$(MSBuildProjectName)</PackageId>
 		<PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,14 +33,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
+		<None Include="..\README.md" Pack="True" PackagePath="\"/>
 	</ItemGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\Gdi32\Win32Interop.Gdi32.csproj" />
 		<ProjectReference Include="..\User32\Win32Interop.User32.csproj" />
 	</ItemGroup>
-  <Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
+	
+	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
 </Project>
