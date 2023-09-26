@@ -1170,8 +1170,7 @@ namespace Win32Interop.Structs
 		public uint dwCount;
 
 		/// BYTE[1]
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.I1)]
-		public byte[] bRawData;
+		public byte bRawData;
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
