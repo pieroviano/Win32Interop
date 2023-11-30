@@ -1,42 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
-	
-	<PropertyGroup>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>$(VersionPrefix).$(VersionSuffix)</Version>
-		<RootNamespace>Win32Interop</RootNamespace>
-		<TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
-		<AssemblyTitle>Win32Interop.Kernel32</AssemblyTitle>
-		<Company>Luke Stratman</Company>
-		<Product>Win32Interop.Kernel32</Product>
-		<Description>Interop methods, structs, and enums for kernel32.dll</Description>
-		<Copyright>Copyright © 2013</Copyright>
-		<DocumentationFile>bin\$(Configuration)\Win32Interop.Kernel32.XML</DocumentationFile>
-		<PackageReleaseNotes>
+  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
+  <PropertyGroup>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+    <RootNamespace>Win32Interop</RootNamespace>
+    <TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
+    <AssemblyTitle>Win32Interop.Kernel32</AssemblyTitle>
+    <Company>Luke Stratman</Company>
+    <Product>Win32Interop.Kernel32</Product>
+    <Description>Interop methods, structs, and enums for kernel32.dll</Description>
+    <Copyright>Copyright © 2013</Copyright>
+    <DocumentationFile>bin\$(Configuration)\Win32Interop.Kernel32.XML</DocumentationFile>
+    <PackageReleaseNotes>
 			- Converted many Int32 method parameters to concrete types.
 			- Removed unicode/ANSI-specific method signatures.
 			- Fixed the signature for ReadConsoleInput.
 		</PackageReleaseNotes>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
-		<Authors>Luke Stratman</Authors>
-		<PackageId>Net4x.$(MSBuildProjectName)</PackageId>
-		<PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
-		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<Content Include="Net4x.$(MSBuildProjectName).props" Pack="True" PackagePath="build\" Condition="Exists('Net4x.$(MSBuildProjectName).props')"/>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="..\README.md" Pack="True" PackagePath="\"/>
-	</ItemGroup>
-
-	<Import Project = "$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
+    <Authors>Luke Stratman</Authors>
+    <PackageId>Net4x.$(MSBuildProjectName)</PackageId>
+    <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Net4x.$(MSBuildProjectName).props" Pack="True" PackagePath="build\" Condition="Exists('Net4x.$(MSBuildProjectName).props')" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
+  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
 </Project>
