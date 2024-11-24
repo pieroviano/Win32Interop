@@ -1,43 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
-  <PropertyGroup>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
-    <RootNamespace>Win32Interop</RootNamespace>
-    <TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
-    <AssemblyTitle>Win32Interop.Dwmapi</AssemblyTitle>
-    <Company>Luke Stratman</Company>
-    <Product>Win32Interop.Dwmapi</Product>
-    <Description>Interop methods, structs, and enums for dwmapi.dll</Description>
-    <Copyright>Copyright © 2013</Copyright>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
-    <DocumentationFile>bin\$(Configuration)\Win32Interop.Dwmapi.XML</DocumentationFile>
-    <PackageReleaseNotes>
+    <Import Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" />
+    <PropertyGroup>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <RootNamespace>Win32Interop</RootNamespace>
+        <TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
+        <AssemblyTitle>Win32Interop.Dwmapi</AssemblyTitle>
+        <Company>Luke Stratman</Company>
+        <Product>Win32Interop.Dwmapi</Product>
+        <Description>Interop methods, structs, and enums for dwmapi.dll</Description>
+        <Copyright>Copyright (c) Piero Viano. All rights reserved.</Copyright>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
+        <DocumentationFile>bin\$(Configuration)\Win32Interop.Dwmapi.XML</DocumentationFile>
+        <PackageReleaseNotes>
 			- Converted many Int32 method parameters to concrete types.
 			- Removed unicode/ANSI-specific method signatures.
 		</PackageReleaseNotes>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
-    <Authors>Luke Stratman</Authors>
-    <PackageId>Net4x.$(MSBuildProjectName)</PackageId>
-    <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Content Include="Net4x.$(MSBuildProjectName).props" Pack="True" PackagePath="build\" Condition="Exists('Net4x.$(MSBuildProjectName).props')" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md" Pack="True" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\User32\Win32Interop.User32.csproj" />
-    <ProjectReference Include="..\Uxtheme\Win32Interop.Uxtheme.csproj" />
-  </ItemGroup>
-  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
+        <Authors>Luke Stratman</Authors>
+        <PackageId>Net4x.$(MSBuildProjectName)</PackageId>
+        <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <DontConvert>False</DontConvert>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="Net4x.$(MSBuildProjectName).props" Condition="Exists('Net4x.$(MSBuildProjectName).props')" Pack="True" PackagePath="build\" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\README.md" Pack="True" PackagePath="\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\User32\Win32Interop.User32.csproj" />
+        <ProjectReference Include="..\Uxtheme\Win32Interop.Uxtheme.csproj" />
+    </ItemGroup>
+    <Import Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" />
 </Project>

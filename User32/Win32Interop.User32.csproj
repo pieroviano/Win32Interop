@@ -1,39 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
-  <PropertyGroup>
-    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <RootNamespace>Win32Interop</RootNamespace>
-    <TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
-    <AssemblyTitle>Win32Interop.User32</AssemblyTitle>
-    <Company>Luke Stratman</Company>
-    <Product>Win32Interop.User32</Product>
-    <Description>Interop methods, structs, and enums for user32.dll</Description>
-    <Copyright>Copyright © 2013</Copyright>
-    <DocumentationFile>bin\$(Configuration)\Win32Interop.User32.XML</DocumentationFile>
-    <PackageReleaseNotes>
+    <Import Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" />
+    <PropertyGroup>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <RootNamespace>Win32Interop</RootNamespace>
+        <TargetFrameworks>net20;net40;net5.0-windows;net6.0-windows;</TargetFrameworks>
+        <AssemblyTitle>Win32Interop.User32</AssemblyTitle>
+        <Company>Luke Stratman</Company>
+        <Product>Win32Interop.User32</Product>
+        <Description>Interop methods, structs, and enums for user32.dll</Description>
+        <Copyright>Copyright (c) Piero Viano. All rights reserved.</Copyright>
+        <DocumentationFile>bin\$(Configuration)\Win32Interop.User32.XML</DocumentationFile>
+        <PackageReleaseNotes>
 			- Converted many Int32 method parameters to concrete types.
 			- Removed unicode/ANSI-specific method signatures.
 			- Fixed the signature for EnumDisplaySettings
 		</PackageReleaseNotes>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
-    <Authors>Luke Stratman</Authors>
-    <PackageId>Net4x.$(MSBuildProjectName)</PackageId>
-    <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Content Include="Net4x.$(MSBuildProjectName).props" Pack="True" PackagePath="build\" Condition="Exists('Net4x.$(MSBuildProjectName).props')" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md" Pack="True" PackagePath="\" />
-    <None Include="..\SystemHookCore\Debug\SystemHookCore.dll" Link="SystemHookCore.dll" CopyToOutputDirectory="PreserveNewest" Pack="True" PackagePath="build\" />
-  </ItemGroup>
-  <Import Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/pieroviano/Win32Interop</RepositoryUrl>
+        <Authors>Luke Stratman</Authors>
+        <PackageId>Net4x.$(MSBuildProjectName)</PackageId>
+        <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <DontConvert>False</DontConvert>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="Net4x.$(MSBuildProjectName).props" Condition="Exists('Net4x.$(MSBuildProjectName).props')" Pack="True" PackagePath="build\" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\README.md" Pack="True" PackagePath="\" />
+        <None Include="..\SystemHookCore\Debug\SystemHookCore.dll" CopyToOutputDirectory="PreserveNewest" Link="SystemHookCore.dll" Pack="True" PackagePath="build\" />
+    </ItemGroup>
+    <Import Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" />
 </Project>
