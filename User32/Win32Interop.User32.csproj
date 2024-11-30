@@ -35,7 +35,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="..\README.md" Pack="True" PackagePath="\" />
-        <None Include="..\SystemHookCore\Debug\SystemHookCore.dll" CopyToOutputDirectory="PreserveNewest" Link="SystemHookCore.dll" Pack="True" PackagePath="build\" />
+        <None Include="..\SystemHookCore\$(Configuration)\SystemHookCore.dll" CopyToOutputDirectory="PreserveNewest" Link="SystemHookCore.dll" Pack="True" PackagePath="build\" />
     </ItemGroup>
     <Import Condition="Exists('$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" Project="$(NuGetPackageRoot)nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" />
 </Project>
