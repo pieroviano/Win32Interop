@@ -119,13 +119,15 @@
     <Net4xConfigurationnugetVersion>1.1.0</Net4xConfigurationnugetVersion>
     <Net4xConfigurationVersion>1.1.0</Net4xConfigurationVersion>
     <Net4xDataDataSetExtensionsVersion>4.8.0</Net4xDataDataSetExtensionsVersion>
+    <Net4xDrawingnugetVersion>4.8.9037</Net4xDrawingnugetVersion>
     <Net4xDrawingVersion>4.8.9037</Net4xDrawingVersion>
     <Net4xEntityFrameworkLibVersion>1.2.0</Net4xEntityFrameworkLibVersion>
     <Net4xEntityFrameworkVersion>6.4.4</Net4xEntityFrameworkVersion>
     <Net4xExtensionsVersion>2.5.0</Net4xExtensionsVersion>
-    <Net4xInternetExplorernugetVersion>1.2.0</Net4xInternetExplorernugetVersion>
+    <Net4xInternetExplorernugetVersion>1.5.0</Net4xInternetExplorernugetVersion>
     <Net4xIoCompressionVersion>1.0.0</Net4xIoCompressionVersion>
     <Net4xIOCompressionVersion>1.0.0</Net4xIOCompressionVersion>
+    <Net4xiTextSharpnugetVersion>5.5.14</Net4xiTextSharpnugetVersion>
     <Net4xiTextSharpVersion>5.5.14</Net4xiTextSharpVersion>
     <Net4xiTextVersion>1.1.0</Net4xiTextVersion>
     <Net4xMSHTMLnugetVersion>1.2.0</Net4xMSHTMLnugetVersion>

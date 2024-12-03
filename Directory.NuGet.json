@@ -25734,5 +25734,64 @@
         "PackageReferences": null
       }
     ]
+  },
+  {
+    "Solution": {
+      "Path": "D:\\CommonLibrary\\Net4x.Drawing\\Net4x.Drawing.nuget.sln",
+      "Version": "Net4xDrawingnugetVersion"
+    },
+    "NuGetPackages": [
+      {
+        "Name": "Net4x.Drawing",
+        "Project": "Net4x.Drawing\\Net4x.Drawing.csproj",
+        "PackageReferences": null
+      }
+    ]
+  },
+  {
+    "Solution": {
+      "Path": "D:\\CommonLibrary\\Net4x.iTextSharp\\Net4x.iTextSharp.nuget.sln",
+      "Version": "Net4xiTextSharpnugetVersion"
+    },
+    "NuGetPackages": [
+      {
+        "Name": "Net4x.iTextSharp",
+        "Project": "Net4x.iTextSharp\\Net4x.iTextSharp.csproj",
+        "PackageReferences": null
+      },
+      {
+        "Name": "Net4x.iTextSharp.Pdfa",
+        "Project": "iTextSharp.Pdfa\\Net4x.iTextSharp.Pdfa.csproj",
+        "PackageReferences": null
+      }
+    ]
+  },
+  {
+    "Solution": {
+      "Path": "D:\\CommonLibrary\\Net4x.MsHtml\\Net4x.MSHTML.nuget.sln",
+      "Version": "Net4xMSHTMLnugetVersion"
+    },
+    "NuGetPackages": [
+      {
+        "Name": "Net4x.Net35.MSHTML",
+        "Project": "Net4x.MSHTML.net35\\Net4x.Net35.MSHTML.csproj",
+        "PackageReferences": null
+      },
+      {
+        "Name": "Net4x.Net40.MSHTML",
+        "Project": "Net4x.MSHTML.net40\\Net4x.Net40.MSHTML.csproj",
+        "PackageReferences": null
+      },
+      {
+        "Name": "Net4x.Net45.MSHTML",
+        "Project": "Net4x.MSHTML.net45\\Net4x.Net45.MSHTML.csproj",
+        "PackageReferences": null
+      },
+      {
+        "Name": "Net4x.Netcoreapp.MSHTML",
+        "Project": "Net4x.MSHTML.netcoreapp\\Net4x.Netcoreapp.MSHTML.csproj",
+        "PackageReferences": null
+      }
+    ]
   }
 ]
